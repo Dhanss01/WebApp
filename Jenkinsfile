@@ -52,6 +52,7 @@ pipeline {
       steps {
         echo 'Manual Certify'
         input 'Do you want to certify?'
+        sleep 60
       }
     }
 
@@ -64,5 +65,14 @@ pipeline {
       }
     }
 
+    stage('Manual') {
+      steps {
+        input 'Do you Want to Certify? '
+      }
+    }
+
+  }
+  environment {
+    Manual = 'test'
   }
 }
